@@ -36,7 +36,8 @@
 
   /* Reveal-on-scroll animations */
   var revealTargets = document.querySelectorAll(
-    ".section__head, .step, .verify__copy, .verify__badge, .quote, .ctaband__inner, .logostrip"
+    ".section__head, .step, .verify__copy, .verify__badge, .quote, .ctaband__inner, .logostrip, " +
+    ".feature, .price-card, .project-card, .skillgroup, .vstep, .headrow"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 

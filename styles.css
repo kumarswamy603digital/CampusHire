@@ -433,3 +433,174 @@ a { color: inherit; text-decoration: none; }
   * { animation: none !important; scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* =========================================================
+   Sub-page shared helpers (Businesses / Students)
+   ========================================================= */
+
+/* Active nav link */
+.nav__links a.is-active { color: var(--indigo); font-weight: 600; }
+
+/* Hero variant: single-column centered intro */
+.hero--center .hero__inner { grid-template-columns: 1fr; text-align: center; }
+.hero--center .hero__copy { max-width: 760px; margin-inline: auto; }
+.hero--center .hero__sub { margin-inline: auto; }
+.hero--center .hero__cta { justify-content: center; }
+.hero--center .hero__proof { justify-content: center; }
+
+/* Section intro that is left-aligned */
+.section__head--left { margin-inline: 0; text-align: left; max-width: 720px; }
+
+/* Two-up header row with action on the right */
+.headrow {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px; margin-bottom: 44px; flex-wrap: wrap;
+}
+.headrow .section__head { margin: 0; text-align: left; }
+
+/* ---------- Feature / benefit cards ---------- */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.feature {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 26px; box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.feature:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: #d9dcf0; }
+.feature__icon {
+  width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center;
+  margin-bottom: 18px; background: var(--tint); color: var(--indigo);
+}
+.feature__icon--emerald { background: rgba(16,185,129,.12); color: var(--emerald-600); }
+.feature h3 { font-size: 1.15rem; letter-spacing: -.01em; }
+.feature p { margin-top: 9px; color: var(--slate); font-size: .98rem; }
+
+/* ---------- Pricing ---------- */
+.pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; align-items: stretch; }
+.price-card {
+  position: relative; display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 34px 30px; box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.price-card--featured {
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+}
+.price-card--featured::before {
+  content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg);
+  padding: 1.5px; background: var(--grad);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+.price-card__tag {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--grad); color: #fff; font-size: .74rem; font-weight: 700;
+  padding: 5px 14px; border-radius: 999px; letter-spacing: .02em; white-space: nowrap;
+}
+.price-card__name { font-weight: 700; font-size: 1.05rem; color: var(--ink-2); }
+.price-card__price { margin: 14px 0 4px; font-size: 2.6rem; font-weight: 900; letter-spacing: -.03em; }
+.price-card__price small { font-size: .95rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
+.price-card__desc { color: var(--slate); font-size: .95rem; min-height: 42px; }
+.price-card__list { list-style: none; margin: 22px 0 28px; display: grid; gap: 13px; }
+.price-card__list li { display: flex; align-items: flex-start; gap: 10px; color: var(--ink-2); font-size: .96rem; }
+.price-card__list svg { color: var(--emerald); flex-shrink: 0; margin-top: 3px; }
+.price-card .btn { margin-top: auto; width: 100%; }
+
+.pricing-note {
+  text-align: center; margin-top: 28px; color: var(--muted); font-size: .95rem;
+}
+.pricing-note strong { color: var(--ink-2); }
+
+/* ---------- Sample project cards ---------- */
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.project-card {
+  display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 26px 24px; box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: #d9dcf0; }
+.project-card__top { display: flex; align-items: center; gap: 12px; }
+.project-card__ico {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  display: grid; place-items: center; color: #fff; background: var(--grad);
+}
+.project-card__cat { font-size: .78rem; font-weight: 600; color: var(--indigo); text-transform: uppercase; letter-spacing: .05em; }
+.project-card h3 { font-size: 1.12rem; margin-top: 3px; letter-spacing: -.01em; }
+.project-card p { margin-top: 12px; color: var(--slate); font-size: .95rem; flex-grow: 1; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.tag {
+  background: var(--tint); color: var(--indigo-600);
+  font-size: .78rem; font-weight: 600; padding: 5px 11px; border-radius: 8px;
+}
+.project-card__foot {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line);
+}
+.project-card__budget strong { font-size: 1.05rem; }
+.project-card__budget small { display: block; color: var(--muted); font-size: .76rem; }
+.project-card__time { color: var(--muted); font-size: .85rem; display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---------- Skill tag cloud ---------- */
+.skillgroups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.skillgroup {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px 26px; box-shadow: var(--shadow-sm);
+}
+.skillgroup__head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.skillgroup__ico {
+  width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center;
+  background: var(--tint); color: var(--indigo);
+}
+.skillgroup h3 { font-size: 1.08rem; }
+.skillcloud { display: flex; flex-wrap: wrap; gap: 10px; }
+.skillcloud span {
+  border: 1px solid var(--line); background: #fbfbff;
+  color: var(--ink-2); font-size: .88rem; font-weight: 500;
+  padding: 8px 14px; border-radius: 999px;
+  transition: border-color .18s ease, color .18s ease, background .18s ease, transform .18s ease;
+}
+.skillcloud span:hover { border-color: var(--indigo); color: var(--indigo); background: var(--tint); transform: translateY(-2px); }
+
+/* ---------- Verification process (vertical) ---------- */
+.vsteps { max-width: 760px; margin: 0 auto; display: grid; gap: 0; position: relative; }
+.vstep { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 22px; padding-bottom: 34px; }
+.vstep:last-child { padding-bottom: 0; }
+.vstep::before {
+  content: ""; position: absolute; left: 31px; top: 56px; bottom: -4px;
+  width: 2px; background: linear-gradient(var(--indigo), rgba(99,102,241,.12));
+}
+.vstep:last-child::before { display: none; }
+.vstep__num {
+  width: 64px; height: 64px; border-radius: 50%; z-index: 1;
+  display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 1.15rem;
+  background: var(--grad); box-shadow: 0 10px 22px rgba(99,102,241,.30);
+}
+.vstep__body { padding-top: 8px; }
+.vstep__body h3 { font-size: 1.18rem; letter-spacing: -.01em; }
+.vstep__body p { margin-top: 8px; color: var(--slate); }
+
+/* ---------- Stat band ---------- */
+.stats-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.stats-band .stat strong {
+  display: block; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -.03em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stats-band .stat span { color: var(--slate); font-size: .96rem; }
+
+/* ---------- Sub-page responsive ---------- */
+@media (max-width: 960px) {
+  .features, .pricing, .projects { grid-template-columns: 1fr; }
+  .skillgroups { grid-template-columns: 1fr; }
+  .stats-band { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .price-card--featured { order: -1; }
+  .headrow { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .vstep { grid-template-columns: 50px 1fr; gap: 16px; }
+  .vstep__num { width: 50px; height: 50px; font-size: 1rem; }
+  .vstep::before { left: 24px; top: 48px; }
+  .stats-band { grid-template-columns: 1fr 1fr; }
+}
